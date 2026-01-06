@@ -1,26 +1,24 @@
 let slideIndex = 0;
 showSlides();
 
+// slideshow
 function showSlides() {
   let i;
   let slides = document.getElementsByClassName("slides");
 
-  // Hide all slides
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";  
   }
 
-  // Move to next slide
   slideIndex++;
   if (slideIndex > slides.length) { slideIndex = 1 }
 
-  // Show current slide
   slides[slideIndex-1].style.display = "block";  
 
-  // Change image every 2 seconds
   setTimeout(showSlides, 2000);
 }
 
+// lightbox
 function openLightbox(img) {
   document.getElementById("lightbox").style.display = "flex";
   document.getElementById("lightbox-img").src = img.src;
@@ -28,4 +26,65 @@ function openLightbox(img) {
 
 function closeLightbox() {
   document.getElementById("lightbox").style.display = "none";
+}
+
+// likes and disklikes
+function toggleLike(button) {
+    const postFooter = button.parentElement;
+    const dislikeBtn = postFooter.querySelector(".dislike-btn");
+
+    const likeCount = button.querySelector(".like-count");
+    const dislikeCount = dislikeBtn.querySelector(".dislike-count");
+
+    if (button.classList.contains("active")) {
+        // remove like
+        likeCount.textContent--;
+        button.classList.remove("active");
+    } else {
+        // add like
+        likeCount.textContent++;
+        button.classList.add("active");
+
+        // remove dislike if active
+        if (dislikeBtn.classList.contains("active")) {
+            dislikeCount.textContent--;
+            dislikeBtn.classList.remove("active");
+        }
+    }
+}
+
+function toggleDislike(button) {
+    const postFooter = button.parentElement;
+    const likeBtn = postFooter.querySelector(".like-btn");
+
+    const dislikeCount = button.querySelector(".dislike-count");
+    const likeCount = likeBtn.querySelector(".like-count");
+
+    if (button.classList.contains("active")) {
+        // remove dislike
+        dislikeCount.textContent--;
+        button.classList.remove("active");
+    } else {
+        // add dislike
+        dislikeCount.textContent++;
+        button.classList.add("active");
+
+        // remove like if active
+        if (likeBtn.classList.contains("active")) {
+            likeCount.textContent--;
+            likeBtn.classList.remove("active");
+        }
+    }
+}
+
+function changeProfilePic() {
+    const male = document.getElementById("male");
+    const female = document.getElementById("female");
+    const profilePic = document.getElementById("profilePic");
+
+    if (male.checked) {
+        profilePic.src = "MEDIA/PICTURE/male.jpg";
+    } else if (female.checked) {
+        profilePic.src = "MEDIA/PICTURE/female.jpg";
+    }
 }
