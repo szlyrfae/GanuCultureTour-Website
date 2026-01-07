@@ -37,15 +37,11 @@ function toggleLike(button) {
     const dislikeCount = dislikeBtn.querySelector(".dislike-count");
 
     if (button.classList.contains("active")) {
-        // remove like
         likeCount.textContent--;
         button.classList.remove("active");
     } else {
-        // add like
         likeCount.textContent++;
         button.classList.add("active");
-
-        // remove dislike if active
         if (dislikeBtn.classList.contains("active")) {
             dislikeCount.textContent--;
             dislikeBtn.classList.remove("active");
@@ -61,15 +57,12 @@ function toggleDislike(button) {
     const likeCount = likeBtn.querySelector(".like-count");
 
     if (button.classList.contains("active")) {
-        // remove dislike
         dislikeCount.textContent--;
         button.classList.remove("active");
     } else {
-        // add dislike
         dislikeCount.textContent++;
         button.classList.add("active");
 
-        // remove like if active
         if (likeBtn.classList.contains("active")) {
             likeCount.textContent--;
             likeBtn.classList.remove("active");
@@ -83,8 +76,8 @@ function changeProfilePic() {
     const profilePic = document.getElementById("profilePic");
 
     if (male.checked) {
-        profilePic.src = "MEDIA/PICTURE/male.jpg";
+        profilePic.src = "assets/images/male.jpg";
     } else if (female.checked) {
-        profilePic.src = "MEDIA/PICTURE/female.jpg";
+        profilePic.src = "assets/images/female.jpg";
     }
 }

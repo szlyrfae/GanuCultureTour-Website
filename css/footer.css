@@ -20,6 +20,7 @@
 .footer-column h4 {
   font-weight: 700;
   margin-bottom: 8px;
+  font-size: 1rem;
 }
 
 .footer-column a {
@@ -27,6 +28,7 @@
   text-decoration: none;
   color: #222;
   margin: 4px 0;
+  font-size: 1rem;
 }
 
 .footer-column a:hover {
@@ -35,4 +37,15 @@
 
 .credit {
   text-align: center;
+  font-size: 0.9rem;
+}
+
+a[href^="mailto:"] {
+  color: #222;
+  text-decoration: none;
+}
+
+a[href^="mailto:"]:hover {
+  text-decoration: underline;
+  color: #222;
 }

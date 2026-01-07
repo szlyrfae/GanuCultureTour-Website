@@ -27,7 +27,44 @@
   width: 120%;
   height: 650px;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   margin-right: 60px;
   margin-top: 60px;
+}
+
+.about-table {
+  margin: 40px auto 100px auto;
+  max-width: 1000px;
+  text-align: center;
+}
+
+.about-table h2 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: black;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.about-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.about-table th,
+.about-table td {
+  padding: 20px 15px;
+  border: 1px solid #ddd;
+  font-family: 'Poppins', sans-serif;
+}
+
+.about-table th {
+  background-color: #b0c6e7;
+  font-weight: bold;
+  color:#584141;
 }
